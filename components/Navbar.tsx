@@ -15,16 +15,16 @@ export default function Navbar() {
     : `/de${pathname === "/" ? "" : pathname}`;
 
   return (
-    <header className="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50">
+    <header className="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50 w-full">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         
         {/* Logo */}
-        <Link href="/" className="font-black text-2xl tracking-tighter text-red-600 uppercase flex items-center gap-2">
+        <Link href="/" className="font-black text-2xl tracking-tighter text-red-600 uppercase flex items-center gap-2 shrink-0">
           <span>K.S.V.</span>
           <span className="text-white">Kitzbühel</span>
         </Link>
         
-        {/* Navigácia - na mobile skrytá (hidden), na PC zobrazená (md:flex) */}
+        {/* Navigácia - na mobile skrytá, na PC (md) zobrazená */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-300">
           <Link href={isDe ? "/de/uber-uns" : "/uber-uns"} className="hover:text-white transition-colors">
             {isDe ? "Wer wir sind" : "O nás"}
