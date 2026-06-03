@@ -10,7 +10,6 @@ export default function Navbar() {
   const isDe = pathname.startsWith("/de");
 
   // Logika pre prepnutie jazyka
-  // Ak sme v DE, odstránime /de z cesty. Ak sme v SK, pridáme /de k ceste.
   const switchUrl = isDe 
     ? pathname.replace("/de", "") || "/" 
     : `/de${pathname === "/" ? "" : pathname}`;
@@ -25,8 +24,8 @@ export default function Navbar() {
           <span className="text-white">Kitzbühel</span>
         </Link>
         
-        {/* Navigácia */}
-        <nav className="flex items-center gap-6 text-sm font-medium text-zinc-300">
+        {/* Navigácia - na mobile skrytá (hidden), na PC zobrazená (md:flex) */}
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-300">
           <Link href={isDe ? "/de/uber-uns" : "/uber-uns"} className="hover:text-white transition-colors">
             {isDe ? "Wer wir sind" : "O nás"}
           </Link>
@@ -42,7 +41,6 @@ export default function Navbar() {
           <Link href={isDe ? "/de/sponzoren" : "/sponzoren"} className="hover:text-white transition-colors">
             {isDe ? "Sponsoren" : "Sponzori"}
           </Link>
-          {/* Pridaný Kontakt */}
           <Link href={isDe ? "/de/kontakt" : "/kontakt"} className="hover:text-white transition-colors">
             {isDe ? "Kontakt" : "Kontakt"}
           </Link>
@@ -50,13 +48,13 @@ export default function Navbar() {
           {/* Prepínač jazykov */}
           <div className="ml-4 pl-4 border-l border-zinc-700 flex gap-3 font-bold text-base">
             <Link 
-              href={isDe ? switchUrl : "/"} 
+              href={isDe ? switchUrl : pathname} 
               className={`${!isDe ? 'text-red-600' : 'text-zinc-600 hover:text-zinc-300'} transition-colors`}
             >
               SK
             </Link>
             <Link 
-              href={isDe ? "/de" : switchUrl} 
+              href={isDe ? pathname : switchUrl} 
               className={`${isDe ? 'text-red-600' : 'text-zinc-600 hover:text-zinc-300'} transition-colors`}
             >
               DE
