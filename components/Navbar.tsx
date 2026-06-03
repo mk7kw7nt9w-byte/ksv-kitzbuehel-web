@@ -1,4 +1,4 @@
-"use client"; // Toto je dôležité, aby fungoval prepínač jazykov
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -6,21 +6,26 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
   const pathname = usePathname();
   
-  // Zistíme, či sme na nemeckej verzii (URL začína na /de)
+  // Zistenie, či sme na nemeckej verzii
   const isDe = pathname.startsWith("/de");
 
-  // Vygenerujeme odkaz pre prepínač (ak sme v DE, vráti SK cestu a naopak)
-  const switchUrl = isDe ? pathname.replace("/de", "") || "/" : `/de${pathname === "/" ? "" : pathname}`;
+  // Logika pre prepnutie jazyka
+  // Ak sme v DE, odstránime /de z cesty. Ak sme v SK, pridáme /de k ceste.
+  const switchUrl = isDe 
+    ? pathname.replace("/de", "") || "/" 
+    : `/de${pathname === "/" ? "" : pathname}`;
 
   return (
     <header className="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo odkazuje na správnu domovskú stránku podľa jazyka */}
-        <Link href="/" className="font-black text-2xl tracking-tighter text-red-600 uppercase flex items-center gap-2">
-  <span>K.S.V.</span>
-  <span className="text-white">Kitzbühel</span>
-</Link>
         
+        {/* Logo */}
+        <Link href="/" className="font-black text-2xl tracking-tighter text-red-600 uppercase flex items-center gap-2">
+          <span>K.S.V.</span>
+          <span className="text-white">Kitzbühel</span>
+        </Link>
+        
+        {/* Navigácia */}
         <nav className="flex items-center gap-6 text-sm font-medium text-zinc-300">
           <Link href={isDe ? "/de/uber-uns" : "/uber-uns"} className="hover:text-white transition-colors">
             {isDe ? "Wer wir sind" : "O nás"}
@@ -37,13 +42,23 @@ export default function Navbar() {
           <Link href={isDe ? "/de/sponzoren" : "/sponzoren"} className="hover:text-white transition-colors">
             {isDe ? "Sponsoren" : "Sponzori"}
           </Link>
+          {/* Pridaný Kontakt */}
+          <Link href={isDe ? "/de/kontakt" : "/kontakt"} className="hover:text-white transition-colors">
+            {isDe ? "Kontakt" : "Kontakt"}
+          </Link>
 
-          {/* Samotný prepínač jazykov s červeným zvýraznením aktívneho */}
+          {/* Prepínač jazykov */}
           <div className="ml-4 pl-4 border-l border-zinc-700 flex gap-3 font-bold text-base">
-            <Link href={switchUrl} className={`${!isDe ? 'text-red-600' : 'text-zinc-600 hover:text-zinc-300'} transition-colors`}>
+            <Link 
+              href={isDe ? switchUrl : "/"} 
+              className={`${!isDe ? 'text-red-600' : 'text-zinc-600 hover:text-zinc-300'} transition-colors`}
+            >
               SK
             </Link>
-            <Link href={switchUrl} className={`${isDe ? 'text-red-600' : 'text-zinc-600 hover:text-zinc-300'} transition-colors`}>
+            <Link 
+              href={isDe ? "/de" : switchUrl} 
+              className={`${isDe ? 'text-red-600' : 'text-zinc-600 hover:text-zinc-300'} transition-colors`}
+            >
               DE
             </Link>
           </div>

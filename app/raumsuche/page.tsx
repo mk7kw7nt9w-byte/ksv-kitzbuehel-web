@@ -62,7 +62,7 @@ export default function Raumsuche() {
               <h3 className="text-xl font-bold text-white mb-2">Máte vhodný priestor?</h3>
               <p className="text-zinc-500 text-sm">Garantujeme seriózne jednanie, spoľahlivé platenie nájmu a údržbu priestorov na vlastné náklady.</p>
             </div>
-            <a href="mailto:info@ksv-kitzbuehel.at?subject=Ponuka priestoru pre KSV" className="group flex items-center gap-3 bg-white text-zinc-950 px-6 py-3 rounded-xl font-bold uppercase tracking-widest hover:bg-zinc-200 transition-all shrink-0">
+            <a href="mailto:ksvkitz@gmail.com?subject=Ponuka priestoru pre KSV" className="group flex items-center gap-3 bg-white text-zinc-950 px-6 py-3 rounded-xl font-bold uppercase tracking-widest hover:bg-zinc-200 transition-all shrink-0">
               Kontaktujte Nás
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>

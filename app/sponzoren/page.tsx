@@ -7,7 +7,7 @@ export default function Sponzoren() {
           Sponzori <span className="text-red-600">.</span>
         </h1>
         <p className="text-xl text-zinc-400 font-light">
-          Staňte sa súčasťou KSV Kitzbühel. Podporte rozvoj silových športov v našom regióne a získajte priestor na prezentáciu svojej značky.
+          Staňte sa súčasťou K.S.V. Kitzbühel. Podporte rozvoj silových športov v našom regióne a získajte priestor na prezentáciu svojej značky.
         </p>
       </div>
 

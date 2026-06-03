@@ -61,7 +61,7 @@ export default function RaumsucheDE() {
               <h3 className="text-xl font-bold text-white mb-2">Haben Sie eine passende Fläche?</h3>
               <p className="text-zinc-500 text-sm">Wir garantieren seriöses Auftreten, pünktliche Mietzahlungen und die Instandhaltung der Räumlichkeiten auf eigene Kosten.</p>
             </div>
-            <a href="mailto:info@ksv-kitzbuehel.at?subject=Raumangebot für KSV" className="group flex items-center gap-3 bg-white text-zinc-950 px-6 py-3 rounded-xl font-bold uppercase tracking-widest hover:bg-zinc-200 transition-all shrink-0">
+            <a href="mailto:ksvkitz@gmail.com?subject=Raumangebot für KSV" className="group flex items-center gap-3 bg-white text-zinc-950 px-6 py-3 rounded-xl font-bold uppercase tracking-widest hover:bg-zinc-200 transition-all shrink-0">
               Kontaktieren Sie uns
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>

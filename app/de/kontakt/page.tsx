@@ -32,7 +32,7 @@ export default function Kontakt() {
           <div className="p-6 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center gap-4">
             <MapPin className="w-8 h-8 text-red-600" />
             <div>
-              <p className="text-zinc-500 text-xs uppercase tracking-widest font-bold">Sídlo spolku</p>
+              <p className="text-zinc-500 text-xs uppercase tracking-widest font-bold">Zustelladresse</p>
               <p className="text-lg font-semibold">Lindnerfeld 7, 6370 Kitzbühel</p>
             </div>
           </div>

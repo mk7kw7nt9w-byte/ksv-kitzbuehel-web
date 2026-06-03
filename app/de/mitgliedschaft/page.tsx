@@ -10,7 +10,7 @@ export default function MitgliedschaftDE() {
           Mitgliedschaft <span className="text-red-600">.</span>
         </h1>
         <p className="text-xl text-zinc-400 max-w-2xl mx-auto font-light relative z-10">
-          Der KSV Kitzbühel ist eine geschlossene Community. Wir suchen keine normalen Fitnessstudio-Besucher, sondern Leute mit Herzblut, die hart trainieren und den Verein mit uns aufbauen wollen.
+          Der K.S.V. Kitzbühel ist eine geschlossene Community. Wir suchen keine normalen Fitnessstudio-Besucher, sondern Leute mit Herzblut, die hart trainieren und den Verein mit uns aufbauen wollen.
         </p>
       </section>
 
@@ -22,7 +22,7 @@ export default function MitgliedschaftDE() {
             <ShieldAlert className="w-12 h-12 text-zinc-500 mb-6" />
             <h3 className="text-2xl font-bold uppercase tracking-widest mb-2 text-zinc-300">Fördermitglied</h3>
             <div className="flex items-baseline gap-2 mb-6">
-              <span className="text-5xl font-black text-white">50 €</span>
+              <span className="text-5xl font-black text-white">?? €</span>
               <span className="text-zinc-500 font-medium uppercase tracking-wider text-sm">/ Jährlich</span>
             </div>
             <p className="text-zinc-400 mb-8 leading-relaxed flex-grow">
@@ -30,7 +30,7 @@ export default function MitgliedschaftDE() {
             </p>
             <ul className="space-y-4 mb-10 text-sm font-medium text-zinc-300">
               <li className="flex items-center gap-3"><Check className="w-5 h-5 text-red-600" /> Einladung zu Events und Wettkämpfen</li>
-              <li className="flex items-center gap-3"><Check className="w-5 h-5 text-red-600" /> Stimmrecht in der Generalversammlung</li>
+              <li className="flex items-center gap-3"><Check className="w-5 h-5 text-red-600" /> Anwesenheit in der Generalversammlung</li>
               <li className="flex items-center gap-3"><Check className="w-5 h-5 text-red-600" /> Das gute Gefühl, die Community zu unterstützen</li>
             </ul>
             <a href="mailto:info@ksv-kitzbuehel.at?subject=Interesse an Fördermitgliedschaft" className="w-full block text-center bg-zinc-800 hover:bg-zinc-700 text-white py-4 rounded-xl font-bold uppercase tracking-widest transition-colors">
@@ -59,7 +59,7 @@ export default function MitgliedschaftDE() {
               <li className="flex items-center gap-3"><Check className="w-5 h-5 text-red-600" /> 24/7 Gym-Zugang (in Planung)</li>
               <li className="flex items-center gap-3"><Check className="w-5 h-5 text-red-600" /> Hochwertiges ATX & Force USA Equipment</li>
               <li className="flex items-center gap-3"><Check className="w-5 h-5 text-red-600" /> Training in einer geschlossenen Community</li>
-              <li className="flex items-center gap-3"><Check className="w-5 h-5 text-red-600" /> Möglichkeit, den KSV Kitzbühel zu repräsentieren</li>
+              <li className="flex items-center gap-3"><Check className="w-5 h-5 text-red-600" /> Möglichkeit, den K.S.V. Kitzbühel zu repräsentieren</li>
             </ul>
             <a href="mailto:info@ksv-kitzbuehel.at?subject=Interesse an aktiver Mitgliedschaft" className="w-full block text-center bg-red-600 hover:bg-red-500 text-white py-4 rounded-xl font-bold uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(220,38,38,0.4)] hover:shadow-[0_0_30px_rgba(220,38,38,0.6)] relative z-10">
               Mitgliedschaft anfragen
