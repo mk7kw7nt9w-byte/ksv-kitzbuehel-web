@@ -36,19 +36,21 @@ export default function UberUns() {
       </section>
 
       {/* Predstavenstvo */}
-      <section className="container mx-auto px-4 py-20 border-t border-zinc-900 max-w-5xl">
-        <h2 className="text-center text-4xl font-black uppercase mb-16 italic tracking-tight text-zinc-700">Vorstand</h2>
-        
-        <div className="flex flex-wrap justify-center gap-12">
-          <div className="flex flex-col items-center">
-            <div className="w-40 h-40 bg-zinc-900 rounded-3xl mb-6 border border-zinc-800 flex items-center justify-center">
-              <svg className="w-16 h-16 text-zinc-700" fill="currentColor" viewBox="0 0 24 24">
-                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold uppercase tracking-tight">Tomas Sailer</h3>
-            <p className="text-red-600 font-medium uppercase text-xs tracking-widest mt-1">Obmann</p>
-          </div>
+<section className="container mx-auto px-4 py-20 border-t border-zinc-900 max-w-5xl">
+  <h2 className="text-center text-4xl font-black uppercase mb-16 italic tracking-tight text-zinc-700">Vorstand</h2>
+  
+  <div className="flex flex-wrap justify-center gap-12">
+    {/* Tommy */}
+    <div className="flex flex-col items-center">
+      <div className="w-40 h-40 bg-zinc-900 rounded-3xl mb-6 border border-zinc-800 flex items-center justify-center">
+        {/* Tu bude neskôr tvoja fotka */}
+        <svg className="w-16 h-16 text-zinc-700" fill="currentColor" viewBox="0 0 24 24">
+           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+      </div>
+      <h3 className="text-2xl font-bold uppercase tracking-tight">Tommy Sailer</h3>
+      <p className="text-red-600 font-medium uppercase text-xs tracking-widest mt-1">Obmann</p>
+    </div>
 
           <div className="flex flex-col items-center">
             <div className="w-40 h-40 bg-zinc-900 rounded-3xl mb-6 border border-zinc-800 flex items-center justify-center">

@@ -3,26 +3,20 @@ import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center w-full min-h-[70vh] bg-zinc-950 text-zinc-100 text-center px-4">
-      
-      {/* Nadpis */}
-      <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter italic mb-6 leading-[1.1]">
-        PRAVÝ KRAFTSPORT<br />
-        <span className="text-red-600">V KITZBÜHELI</span>
+    <div className="flex flex-col items-center justify-center pt-20 px-4 text-center">
+      <h1 className="text-6xl font-extrabold tracking-tighter mb-6 uppercase">
+        Pravý <span className="text-red-600">Kraftsport</span> v Kitzbüheli
       </h1>
-      
-      {/* Podnadpis */}
-      <p className="text-base md:text-xl text-zinc-400 font-light mb-10 max-w-xl">
-        Budujeme komunitu, ktorá sa nebojí ťažkých váh. Sme K.S.V. Kitzbühel.
+      <p className="text-xl text-zinc-400 mb-10 max-w-2xl">
+        Budujeme komunitu, ktorá sa nebojí ťažkých váh. Sme KSV Kitzbühel.
       </p>
 
       {/* Tlačidlo */}
       <Link 
         href="/raumsuche" 
-        className="bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-widest transition-all flex items-center gap-2"
+        className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-md transition-all"
       >
-        Momentalne sme v zaciatkoch a hladame priestory
-        <ArrowRight className="w-5 h-5 text-red-600" />
+        Hľadáme priestory
       </Link>
 
     </div>
