@@ -3,53 +3,65 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   
-  // Zistíme, či sme na nemeckej verzii (URL začína na /de)
   const isDe = pathname.startsWith("/de");
 
-  // Vygenerujeme odkaz pre prepínač (ak sme v DE, vráti SK cestu a naopak)
-  const switchUrl = isDe ? pathname.replace("/de", "") || "/" : `/de${pathname === "/" ? "" : pathname}`;
+  // Logika prepínačov
+  const switchToSk = isDe ? (pathname.replace("/de", "") || "/") : pathname;
+  const switchToDe = isDe ? pathname : `/de${pathname === "/" ? "" : pathname}`;
+
+  const navLinks = [
+    { sk: "O nás", de: "Wer wir sind", href: isDe ? "/de/uber-uns" : "/uber-uns" },
+    { sk: "Galéria", de: "Galerie", href: isDe ? "/de/galerie" : "/galerie" },
+    { sk: "Priestory", de: "Raumsuche", href: isDe ? "/de/raumsuche" : "/raumsuche" },
+    { sk: "Členstvo", de: "Mitgliedschaft", href: isDe ? "/de/mitgliedschaft" : "/mitgliedschaft" },
+    { sk: "Sponzori", de: "Sponsoren", href: isDe ? "/de/sponzoren" : "/sponzoren" },
+  ];
 
   return (
-    <header className="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50">
+    <header className="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50 w-full">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="font-black text-2xl tracking-tighter text-red-600 uppercase flex items-center gap-2">
-  <span>K.S.V.</span>
-  <span className="text-white">Kitzbühel</span>
-</Link>
+        <Link href="/" className="font-black text-xl tracking-tighter text-red-600 uppercase flex items-center gap-2">
+          <span>K.S.V.</span><span className="text-white">Kitzbühel</span>
+        </Link>
         
-        <nav className="flex items-center gap-6 text-sm font-medium text-zinc-300">
-          <Link href={isDe ? "/de/uber-uns" : "/uber-uns"} className="hover:text-white transition-colors">
-            {isDe ? "Wer wir sind" : "O nás"}
-          </Link>
-          <Link href={isDe ? "/de/galerie" : "/galerie"} className="hover:text-white transition-colors">
-            {isDe ? "Galerie" : "Galéria"}
-          </Link>
-          <Link href={isDe ? "/de/raumsuche" : "/raumsuche"} className="hover:text-white transition-colors">
-            {isDe ? "Raumsuche" : "Priestory"}
-          </Link>
-          <Link href={isDe ? "/de/mitgliedschaft" : "/mitgliedschaft"} className="hover:text-white transition-colors">
-            {isDe ? "Mitgliedschaft" : "Členstvo"}
-          </Link>
-          <Link href={isDe ? "/de/sponzoren" : "/sponzoren"} className="hover:text-white transition-colors">
-            {isDe ? "Sponsoren" : "Sponzori"}
-          </Link>
+        <button className="md:hidden text-white p-2" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
 
-          {/* Samotný prepínač jazykov s červeným zvýraznením aktívneho */}
-          <div className="ml-4 pl-4 border-l border-zinc-700 flex gap-3 font-bold text-base">
-            <Link href={switchUrl} className={`${!isDe ? 'text-red-600' : 'text-zinc-600 hover:text-zinc-300'} transition-colors`}>
-              SK
+        {/* Desktop - tu som zmenil text-base na text-sm */}
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-300">
+          {navLinks.map((link) => (
+            <Link key={link.sk} href={link.href} className="hover:text-white transition-colors">
+              {isDe ? link.de : link.sk}
             </Link>
-            <Link href={switchUrl} className={`${isDe ? 'text-red-600' : 'text-zinc-600 hover:text-zinc-300'} transition-colors`}>
-              DE
-            </Link>
+          ))}
+          <div className="ml-4 pl-4 border-l border-zinc-700 flex gap-3 font-bold text-sm">
+            <Link href={switchToSk} className={!isDe ? 'text-red-600' : 'text-zinc-600'}>SK</Link>
+            <Link href={switchToDe} className={isDe ? 'text-red-600' : 'text-zinc-600'}>DE</Link>
           </div>
         </nav>
       </div>
+
+      {/* Mobilné menu */}
+      {isOpen && (
+        <nav className="md:hidden bg-zinc-900 border-b border-zinc-800 p-4 flex flex-col gap-3 text-center text-sm">
+          {navLinks.map((link) => (
+            <Link key={link.sk} href={link.href} className="py-2 text-white" onClick={() => setIsOpen(false)}>
+              {isDe ? link.de : link.sk}
+            </Link>
+          ))}
+          <div className="flex justify-center gap-6 pt-4 border-t border-zinc-800 font-bold text-sm">
+            <Link href={switchToSk} className={!isDe ? 'text-red-600' : 'text-zinc-600'}>SK</Link>
+            <Link href={switchToDe} className={isDe ? 'text-red-600' : 'text-zinc-600'}>DE</Link>
+          </div>
+        </nav>
+      )}
     </header>
   );
 }
