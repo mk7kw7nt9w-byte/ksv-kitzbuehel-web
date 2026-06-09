@@ -6,7 +6,7 @@ export default function MitgliedschaftDE() {
       
       <section className="w-full relative pt-24 pb-16 px-4 text-center overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-red-900/20 blur-[120px] rounded-full pointer-events-none"></div>
-        <h1 className="text-6xl md:text-8xl font-black mb-6 uppercase tracking-tighter italic relative z-10">
+        <h1 className="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter italic relative z-10">
           Mitgliedschaft <span className="text-red-600">.</span>
         </h1>
         <p className="text-xl text-zinc-400 max-w-2xl mx-auto font-light relative z-10">

@@ -5,7 +5,7 @@ export default function RaumsucheDE() {
     <div className="flex flex-col items-center w-full bg-zinc-950 text-zinc-100 pb-24 selection:bg-red-600 selection:text-white">
       
       <section className="w-full pt-24 pb-16 px-4 text-center">
-        <h1 className="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter italic">
+        <h1 className="text-3xl md:text-5xl font-black mb-6 uppercase tracking-tighter italic">
           Wir suchen <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-900">Räumlichkeiten</span>
         </h1>
         <p className="text-xl text-zinc-400 max-w-2xl mx-auto font-light leading-relaxed">
