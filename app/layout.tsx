@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="border-t border-zinc-900 bg-zinc-950 py-10">
           <div className="container mx-auto px-4 text-center">
             <p className="text-zinc-600 text-sm mb-4">
-              © {new Date().getFullYear()} Kraftsportverein Kitzbühel
+              © {new Date().getFullYear()} Kraftsportverein Kitzbühel ; ZVR-Zahl 1928877064
             </p>
             <div className="flex justify-center gap-6 text-xs text-zinc-500 uppercase tracking-widest">
               <Link href="/impressum" className="hover:text-white transition-colors">

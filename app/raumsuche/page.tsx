@@ -1,76 +1,94 @@
-import { ArrowRight, Hammer, MapPin, Ruler } from "lucide-react";
+import { ArrowRight, Hammer, MapPin, Ruler, Truck } from "lucide-react";
 
 export default function Raumsuche() {
+  const requirements = [
+    {
+      icon: Ruler,
+      title: "Plocha",
+      text: "Približne 100 až 200 m². Ideálna je otvorená dispozícia s čo najmenším počtom priečok.",
+    },
+    {
+      icon: Hammer,
+      title: "Nosnosť podlahy",
+      text: "Prízemie alebo suterén s nosnou betónovou podlahou vhodnou na tréning s ťažkými váhami.",
+    },
+    {
+      icon: MapPin,
+      title: "Lokalita",
+      text: "Kitzbühel a blízke okolie. Vhodné sú najmä komerčné alebo priemyselné zóny.",
+    },
+    {
+      icon: Truck,
+      title: "Prístup",
+      text: "Výhodou je dobrý prístup, možnosť jednoduchého zásobovania a parkovanie v blízkosti.",
+    },
+  ];
+
   return (
-    <div className="flex flex-col items-center w-full bg-zinc-950 text-zinc-100 pb-24 selection:bg-red-600 selection:text-white">
-      
-      <section className="w-full pt-24 pb-16 px-4 text-center">
-        <h1 className="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter italic">
-          Hľadáme <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-900">Priestory</span>
+    <div className="w-full bg-zinc-950 pb-24 text-zinc-100 selection:bg-red-600 selection:text-white">
+      <section className="mx-auto max-w-5xl px-4 pb-16 pt-24 text-center">
+        <p className="mb-4 text-sm font-bold uppercase tracking-[0.28em] text-red-600">
+          Hľadáme priestor
+        </p>
+
+        <h1 className="mb-6 text-5xl font-black uppercase italic tracking-tighter md:text-7xl">
+          Hľadáme <span className="text-red-600">priestory</span>
         </h1>
-        <p className="text-xl text-zinc-400 max-w-2xl mx-auto font-light leading-relaxed">
-          Pre náš Kraftsportverein Kitzbühel aktívne hľadáme vhodný komerčný alebo priemyselný priestor na zriadenie tréningového centra. Sme spoľahlivý partner s dlhodobou víziou.
+
+        <p className="mx-auto max-w-2xl text-lg font-light leading-relaxed text-zinc-400 md:text-xl">
+          Pre K.S.V. Kitzbühel hľadáme vhodný komerčný alebo priemyselný
+          priestor, ktorý môže slúžiť ako klubový a tréningový priestor pre
+          silový šport.
         </p>
       </section>
 
-      <section className="container mx-auto px-4 max-w-4xl">
-        <div className="bg-zinc-900/50 backdrop-blur-md border border-zinc-800 rounded-3xl p-8 md:p-12 shadow-2xl">
-          
-          <h2 className="text-2xl font-bold uppercase tracking-widest mb-8 border-b border-zinc-800 pb-4 text-zinc-200">
-            Naše Požiadavky
+      <section className="mx-auto max-w-5xl px-4">
+        <div className="rounded-lg border border-zinc-800 bg-zinc-900/60 p-6 md:p-10">
+          <h2 className="mb-8 border-b border-zinc-800 pb-4 text-2xl font-bold uppercase tracking-widest text-zinc-200">
+            Naše požiadavky
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-red-950/30 flex items-center justify-center border border-red-900/50 shrink-0">
-                  <Ruler className="w-6 h-6 text-red-500" />
+          <div className="grid gap-8 md:grid-cols-2">
+            {requirements.map((item) => (
+              <div key={item.title} className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-red-900/50 bg-red-950/30">
+                  <item.icon className="h-6 w-6 text-red-500" />
                 </div>
-                <div>
-                  <h4 className="text-lg font-bold text-white mb-1 uppercase">Plocha</h4>
-                  <p className="text-zinc-400 text-sm leading-relaxed">Približne 100 až 200 m². Ideálne s otvorenou dispozíciou bez zbytočných priečok.</p>
-                </div>
-              </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-red-950/30 flex items-center justify-center border border-red-900/50 shrink-0">
-                  <Hammer className="w-6 h-6 text-red-500" />
-                </div>
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-1 uppercase">Nosnosť podlahy</h4>
-                  <p className="text-zinc-400 text-sm leading-relaxed">Hľadáme priestory na prízemí alebo suteréne s vysokou nosnosťou podlahy (betón) kvôli ťažkým váham.</p>
+                  <h3 className="mb-1 text-lg font-bold uppercase text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-zinc-400">
+                    {item.text}
+                  </p>
                 </div>
               </div>
-            </div>
-
-            <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-red-950/30 flex items-center justify-center border border-red-900/50 shrink-0">
-                  <MapPin className="w-6 h-6 text-red-500" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-bold text-white mb-1 uppercase">Lokalita</h4>
-                  <p className="text-zinc-400 text-sm leading-relaxed">Kitzbühel a blízke okolie. Preferujeme priemyselné zóny (Gewerbegebiet), kde nebudeme rušiť obyvateľov hlukom.</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
-          {/* Kontakt pre majiteľov */}
-          <div className="mt-12 bg-zinc-950 p-8 rounded-2xl border border-zinc-800/80 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="mt-12 flex flex-col items-start justify-between gap-6 rounded-lg border border-zinc-800 bg-zinc-950 p-6 md:flex-row md:items-center md:p-8">
             <div>
-              <h3 className="text-xl font-bold text-white mb-2">Máte vhodný priestor?</h3>
-              <p className="text-zinc-500 text-sm">Garantujeme seriózne jednanie, spoľahlivé platenie nájmu a údržbu priestorov na vlastné náklady.</p>
+              <h3 className="mb-2 text-xl font-bold text-white">
+                Máte vhodný priestor?
+              </h3>
+              <p className="max-w-2xl text-sm leading-relaxed text-zinc-500">
+                Vystupujeme seriózne, plánujeme dlhodobo a radi osobne
+                preberieme podmienky využitia, hluk, prístup aj ďalšie
+                praktické detaily.
+              </p>
             </div>
-            <a href="mailto:ksvkitz@gmail.com?subject=Ponuka priestoru pre KSV" className="group flex items-center gap-3 bg-white text-zinc-950 px-6 py-3 rounded-xl font-bold uppercase tracking-widest hover:bg-zinc-200 transition-all shrink-0">
-              Kontaktujte Nás
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+
+            <a
+              href="mailto:ksvkitz@gmail.com?subject=Ponuka%20priestoru%20pre%20KSV%20Kitzb%C3%BChel"
+              className="inline-flex shrink-0 items-center justify-center gap-3 rounded-lg bg-white px-6 py-3 text-sm font-bold uppercase tracking-widest text-zinc-950 transition-colors hover:bg-zinc-200"
+            >
+              Kontaktujte nás
+              <ArrowRight className="h-5 w-5" />
             </a>
           </div>
-
         </div>
       </section>
-
     </div>
   );
 }
