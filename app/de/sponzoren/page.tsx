@@ -91,7 +91,7 @@ export default function SponsorenDE() {
           </p>
 
           <a
-            href="mailto:info@ksv-kitzbuehel.at?subject=Sponsoring%20KSV%20Kitzb%C3%BChel"
+            href="mailto:ksvkitz@gmail.com?subject=Sponsoring%20KSV%20Kitzb%C3%BChel"
             className="inline-flex items-center justify-center gap-3 rounded-lg bg-red-600 px-8 py-4 text-sm font-black uppercase tracking-widest text-white transition-colors hover:bg-red-500"
           >
             E-Mail schreiben
