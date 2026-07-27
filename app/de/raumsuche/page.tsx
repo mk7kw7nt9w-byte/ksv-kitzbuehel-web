@@ -240,3 +240,4 @@ export default function RaumsucheDE() {
       </section>
     </main>
   );
+}
