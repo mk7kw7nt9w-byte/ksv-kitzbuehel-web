@@ -12,7 +12,7 @@ import {
 const requirements = [
   {
     icon: Ruler,
-    title: "60–100 m²",
+    title: "60–120 m²",
     text: "Bevorzugt wird ein offener Grundriss mit möglichst wenigen Trennwänden.",
   },
   {
@@ -47,45 +47,54 @@ export default function RaumsucheDE() {
     "&body=Guten%20Tag%2C%0A%0Aich%20habe%20m%C3%B6glicherweise%20eine%20passende%20Fl%C3%A4che%20f%C3%BCr%20den%20K.S.V.%20Kitzb%C3%BChel.%0A%0AOrt%3A%0AGr%C3%B6%C3%9Fe%3A%0AZustand%3A%0AKontaktdaten%3A%0A%0AFreundliche%20Gr%C3%BC%C3%9Fe";
 
   return (
-    <main className="w-full bg-zinc-950 text-zinc-100 selection:bg-red-600 selection:text-white">
+    <main
+      lang="de"
+      className="w-full overflow-x-hidden bg-zinc-950 text-zinc-100 selection:bg-red-600 selection:text-white"
+    >
       {/* Hero */}
       <section className="border-b border-zinc-800">
-        <div className="mx-auto max-w-6xl px-4 pb-20 pt-24 md:pb-28 md:pt-32">
-          <div className="max-w-4xl">
-            <div className="mb-6 flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-red-500">
-              <Building2 className="h-5 w-5" aria-hidden="true" />
+        <div className="mx-auto w-full max-w-6xl px-4 pb-16 pt-16 sm:pb-20 sm:pt-24 md:pb-28 md:pt-32">
+          <div className="min-w-0 max-w-4xl">
+            <div className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-red-500 sm:mb-6 sm:text-sm">
+              <Building2
+                className="h-5 w-5 shrink-0"
+                aria-hidden="true"
+              />
               Raum gesucht
             </div>
 
-            <h1 className="max-w-4xl text-4xl font-black uppercase leading-tight tracking-normal text-white sm:text-5xl md:text-7xl">
+            <h1 className="max-w-full text-3xl font-black uppercase leading-tight tracking-normal text-white [overflow-wrap:anywhere] sm:text-5xl md:text-7xl">
               Ein neues Zuhause für{" "}
               <span className="text-red-600">
                 Kraftsport in Kitzbühel
               </span>
             </h1>
 
-            <p className="mt-7 max-w-3xl text-lg leading-relaxed text-zinc-300 md:text-xl">
+            <p className="mt-6 max-w-3xl text-base leading-relaxed text-zinc-300 sm:mt-7 sm:text-lg md:text-xl">
               Der K.S.V. Kitzbühel sucht eine ungenutzte Gewerbe-, Lager- oder
               Industriefläche, die wir langfristig als Vereinsraum und
               Trainingsstätte nutzen können.
             </p>
 
-            <p className="mt-4 max-w-3xl leading-relaxed text-zinc-400">
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-base">
               Wir suchen keine Fläche zu marktüblichen kommerziellen
               Mietkonditionen, sondern eine langfristige und leistbare Lösung
               für unseren gemeinnützigen Vereinsbetrieb.
             </p>
 
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="mt-8 flex flex-col gap-4 sm:mt-9 sm:flex-row sm:items-center">
               <a
                 href={emailHref}
-                className="inline-flex min-h-12 items-center justify-center gap-3 rounded-lg bg-red-600 px-6 py-3 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-zinc-950"
+                className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-lg bg-red-600 px-5 py-3 text-center text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-zinc-950 sm:w-auto sm:px-6"
               >
                 Fläche anbieten
-                <ArrowRight className="h-5 w-5" aria-hidden="true" />
+                <ArrowRight
+                  className="h-5 w-5 shrink-0"
+                  aria-hidden="true"
+                />
               </a>
 
-              <p className="text-sm text-zinc-500">
+              <p className="text-sm leading-relaxed text-zinc-500">
                 Auch Hinweise und Empfehlungen helfen uns weiter.
               </p>
             </div>
@@ -98,26 +107,26 @@ export default function RaumsucheDE() {
         className="border-b border-zinc-800 bg-zinc-900/40"
         aria-labelledby="anforderungen"
       >
-        <div className="sr-only">
-          <h2 id="anforderungen">Unsere Anforderungen</h2>
-        </div>
+        <h2 id="anforderungen" className="sr-only">
+          Unsere Anforderungen
+        </h2>
 
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-px bg-zinc-800 sm:grid-cols-2 md:grid-cols-4">
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-px bg-zinc-800 sm:grid-cols-2 md:grid-cols-4">
           {requirements.map((item) => (
             <article
               key={item.title}
-              className="min-h-52 bg-zinc-900 px-5 py-7 md:px-7 md:py-9"
+              className="min-w-0 bg-zinc-900 px-5 py-7 sm:min-h-52 md:px-7 md:py-9"
             >
               <item.icon
                 className="mb-5 h-7 w-7 text-red-500"
                 aria-hidden="true"
               />
 
-              <h3 className="text-base font-bold uppercase text-white md:text-lg">
+              <h3 className="max-w-full text-base font-bold uppercase text-white [overflow-wrap:anywhere] md:text-lg">
                 {item.title}
               </h3>
 
-              <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+              <p className="mt-3 max-w-full text-sm leading-relaxed text-zinc-400 [overflow-wrap:anywhere]">
                 {item.text}
               </p>
             </article>
@@ -126,20 +135,20 @@ export default function RaumsucheDE() {
       </section>
 
       {/* Geeignete Flächen */}
-      <section className="mx-auto grid max-w-6xl gap-14 px-4 py-20 md:grid-cols-[1fr_0.9fr] md:py-24">
-        <div>
-          <p className="text-sm font-bold uppercase tracking-widest text-red-500">
+      <section className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 overflow-hidden px-4 py-16 md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:gap-14 md:py-24">
+        <div className="min-w-0">
+          <p className="max-w-full text-sm font-bold uppercase tracking-widest text-red-500 [overflow-wrap:anywhere]">
             Geeignete Flächen
           </p>
 
-          <h2 className="mt-4 text-3xl font-black uppercase leading-tight tracking-normal text-white md:text-4xl">
+          <h2 className="mt-4 max-w-full text-2xl font-black uppercase leading-tight tracking-normal text-white [overflow-wrap:anywhere] sm:text-3xl md:text-4xl">
             Ungenutzt und renovierungsbedürftig?
             <span className="mt-2 block text-red-600">
               Für uns kein Problem.
             </span>
           </h2>
 
-          <p className="mt-6 max-w-2xl leading-relaxed text-zinc-400">
+          <p className="mt-6 max-w-2xl leading-relaxed text-zinc-400 [overflow-wrap:anywhere]">
             Wir suchen keine fertig ausgebaute Fläche und kein klassisches
             gewerbliches Mietobjekt zu marktüblichen Konditionen. Interessant
             sind vor allem leerstehende oder derzeit nicht wirtschaftlich
@@ -147,14 +156,14 @@ export default function RaumsucheDE() {
             ist.
           </p>
 
-          <p className="mt-4 max-w-2xl leading-relaxed text-zinc-400">
+          <p className="mt-4 max-w-2xl leading-relaxed text-zinc-400 [overflow-wrap:anywhere]">
             Notwendige Renovierungs- und Anpassungsarbeiten können wir nach
             Absprache weitgehend selbst übernehmen. Auch ehemalige
             Werkstätten, Lagerflächen, Keller, Hallenteile oder andere
             renovierungsbedürftige Räume kommen für uns infrage.
           </p>
 
-          <p className="mt-4 max-w-2xl leading-relaxed text-zinc-400">
+          <p className="mt-4 max-w-2xl leading-relaxed text-zinc-400 [overflow-wrap:anywhere]">
             Entscheidend sind ein belastbarer Boden, ausreichend Platz und
             eine Lage, in der ein geregelter Trainingsbetrieb möglich ist.
             Luxus oder eine hochwertige Ausstattung benötigen wir nicht.
@@ -162,23 +171,23 @@ export default function RaumsucheDE() {
         </div>
 
         {/* Vorteile */}
-        <div className="border-l-2 border-red-600 pl-6 md:pl-8">
-          <div className="mb-6 flex items-center gap-3">
+        <div className="min-w-0 border-l-2 border-red-600 pl-5 sm:pl-6 md:pl-8">
+          <div className="mb-6 flex min-w-0 items-center gap-3">
             <ShieldCheck
-              className="h-7 w-7 text-red-500"
+              className="h-7 w-7 shrink-0 text-red-500"
               aria-hidden="true"
             />
 
-            <h2 className="text-xl font-bold uppercase text-white">
+            <h2 className="min-w-0 text-lg font-bold uppercase text-white [overflow-wrap:anywhere] sm:text-xl">
               Was wir mitbringen
             </h2>
           </div>
 
-          <ul className="space-y-4">
+          <ul className="min-w-0 space-y-4">
             {advantages.map((advantage) => (
               <li
                 key={advantage}
-                className="flex items-start gap-3 text-sm leading-relaxed text-zinc-300"
+                className="flex min-w-0 items-start gap-3 text-sm leading-relaxed text-zinc-300"
               >
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-600">
                   <Check
@@ -187,7 +196,9 @@ export default function RaumsucheDE() {
                   />
                 </span>
 
-                <span>{advantage}</span>
+                <span className="min-w-0 [overflow-wrap:anywhere]">
+                  {advantage}
+                </span>
               </li>
             ))}
           </ul>
@@ -196,34 +207,36 @@ export default function RaumsucheDE() {
 
       {/* Kontakt */}
       <section className="border-y border-zinc-800 bg-zinc-900">
-        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-4 py-14 md:flex-row md:items-center md:py-16">
-          <div className="max-w-2xl">
-            <h2 className="text-2xl font-black uppercase tracking-normal text-white md:text-3xl">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-8 px-4 py-12 md:flex-row md:items-center md:py-16">
+          <div className="min-w-0 max-w-2xl">
+            <h2 className="max-w-full text-2xl font-black uppercase tracking-normal text-white [overflow-wrap:anywhere] md:text-3xl">
               Kennen Sie eine passende Fläche?
             </h2>
 
-            <p className="mt-3 leading-relaxed text-zinc-400">
+            <p className="mt-3 max-w-full leading-relaxed text-zinc-400 [overflow-wrap:anywhere]">
               Besonders interessant sind leerstehende oder
               renovierungsbedürftige Räume, die wir zu leistbaren
               Vereinskonditionen langfristig nutzen und nach Absprache selbst
               herrichten können.
             </p>
 
-            <p className="mt-3 text-sm leading-relaxed text-zinc-500">
+            <p className="mt-3 max-w-full text-sm leading-relaxed text-zinc-500 [overflow-wrap:anywhere]">
               Senden Sie uns Standort, ungefähre Größe, Zustand und Ihre
-              Kontaktdaten. Wir melden uns persönlich und unverbindlich
-              zurück.
+              Kontaktdaten. Wir melden uns persönlich und unverbindlich zurück.
             </p>
           </div>
 
           <a
             href={emailHref}
-            className="inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-3 rounded-lg bg-red-600 px-6 py-3 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-zinc-900 sm:w-auto"          >
+            className="inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-3 rounded-lg bg-red-600 px-5 py-3 text-center text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-zinc-900 sm:w-auto sm:px-6"
+          >
             Raum vorschlagen
-            <ArrowRight className="h-5 w-5" aria-hidden="true" />
+            <ArrowRight
+              className="h-5 w-5 shrink-0"
+              aria-hidden="true"
+            />
           </a>
         </div>
       </section>
     </main>
   );
-}
