@@ -50,7 +50,7 @@ export default function Impressum() {
         <section>
           <h2 className="mb-2 text-xl font-bold text-red-600">Vorstand</h2>
           <p>
-            Obmann: Tommy Sailer
+            Obmann: Tomas Sailer
             <br />
             Kassier / Schriftführer: Oto Okoličáni
           </p>

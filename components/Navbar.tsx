@@ -12,7 +12,7 @@ export default function Navbar() {
     { label: "Galerie", href: "/de/galerie" },
     { label: "Raumsuche", href: "/de/raumsuche" },
     { label: "Mitgliedschaft", href: "/de/mitgliedschaft" },
-    { label: "Sponsoren", href: "/de/sponzoren" },
+    { label: "Sponsoren", href: "/de/sponsoren" },
     
   ];
 

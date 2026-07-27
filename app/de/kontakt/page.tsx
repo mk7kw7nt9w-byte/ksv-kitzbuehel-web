@@ -15,7 +15,7 @@ export default function Kontakt() {
               <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">
                 Obmann
               </p>
-              <p className="text-lg font-semibold text-white">Tommy Sailer</p>
+              <p className="text-lg font-semibold text-white">Tomas Sailer</p>
             </div>
           </div>
 
