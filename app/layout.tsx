@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "K.S.V. Kitzbühel | Kraftsportverein",
-  description: "Echter Kraftsport in Kitzbühel.",
+  description: "K.S.V. Kitzbühel: Wir bauen ein Zuhause für Kraftsport, Athletik und perspektivisch Ringen in Kitzbühel auf.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
