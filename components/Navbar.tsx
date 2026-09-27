@@ -1,65 +1,91 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 
+const links = [
+  ["Wer wir sind", "/de/uber-uns"],
+  ["Unsere Vision", "/de/vision"],
+  ["Raumsuche", "/de/raumsuche"],
+  ["Sponsoren", "/de/sponsoren"],
+  ["Kontakt", "/de/kontakt"],
+];
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const navLinks = [
-    { label: "Wer wir sind", href: "/de/uber-uns" },
-    { label: "Galerie", href: "/de/galerie" },
-    { label: "Raumsuche", href: "/de/raumsuche" },
-    { label: "Mitgliedschaft", href: "/de/mitgliedschaft" },
-    { label: "Sponsoren", href: "/de/sponsoren" },
-    
-  ];
-
+  const [open, setOpen] = useState(false);
+  const button = useRef<HTMLButtonElement>(null);
+  const path = usePathname();
   return (
-    <header className="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50 w-full">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+    <header
+      className="site-header"
+      onKeyDown={(e) => {
+        if (e.key === "Escape") {
+          setOpen(false);
+          button.current?.focus();
+        }
+      }}
+    >
+      <div className="nav-shell">
         <Link
           href="/de"
-          className="font-black text-2xl tracking-tighter text-red-600 uppercase flex items-center gap-2"
+          className="brand"
+          aria-label="K.S.V. Kitzbühel – Startseite"
+          onClick={() => setOpen(false)}
         >
-          <span>K.S.V.</span>
-          <span className="text-white">Kitzbühel</span>
+          <span className="brand-mark">
+            K.S.V<span>.</span>
+          </span>
+          <span className="brand-location">
+            KITZBÜHEL
+            <br />
+            <small>KRAFTSPORTVEREIN</small>
+          </span>
         </Link>
-
-        <button
-          className="md:hidden text-white p-2"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-300">
-          {navLinks.map((link) => (
+        <nav aria-label="Hauptnavigation" className="desktop-nav">
+          {links.map(([label, href]) => (
             <Link
-              key={link.label}
-              href={link.href}
-              className="hover:text-white transition-colors"
+              key={href}
+              href={href}
+              aria-current={path === href ? "page" : undefined}
             >
-              {link.label}
+              {label}
             </Link>
           ))}
         </nav>
+        <Link className="nav-cta" href="/de/mitgliedschaft">
+          Dabei sein <ArrowUpRight size={16} />
+        </Link>
+        <button
+          ref={button}
+          className="menu-toggle"
+          aria-label={open ? "Menü schließen" : "Menü öffnen"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X /> : <Menu />}
+        </button>
       </div>
-
-      {isOpen && (
-        <nav className="md:hidden bg-zinc-900 border-b border-zinc-800 p-4 flex flex-col gap-3 text-center">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-sm py-2 text-white truncate"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+      {open && (
+        <nav
+          id="mobile-navigation"
+          className="mobile-nav"
+          aria-label="Mobile Navigation"
+        >
+          {[...links, ["Mitgliedschaft", "/de/mitgliedschaft"]].map(
+            ([label, href]) => (
+              <Link
+                key={href}
+                href={href}
+                aria-current={path === href ? "page" : undefined}
+                onClick={() => setOpen(false)}
+              >
+                {label}
+                <ArrowUpRight size={18} />
+              </Link>
+            ),
+          )}
         </nav>
       )}
     </header>

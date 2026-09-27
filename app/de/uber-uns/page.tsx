@@ -11,7 +11,7 @@ export default function UberUnsDE() {
     {
       icon: Dumbbell,
       title: "Kraft & Leistung",
-      text: "Fokus auf Grundübungen, Kraftdreikampf und verantwortungsvolles Training mit schweren Gewichten.",
+      text: "Vielseitiger Kraftsport, Grundübungen und Athletik. Kraftdreikampf ist eine unserer Disziplinen; weitere Angebote entwickeln wir nach den Möglichkeiten des Vereins.",
     },
     {
       icon: Shield,

@@ -1,4 +1,3 @@
-import { ImageIcon } from "lucide-react";
 import Image from "next/image";
 
 export default function GalerieContent({ nadpis, popis }: { nadpis: string, popis: string }) {

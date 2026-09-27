@@ -47,7 +47,7 @@ export default function RaumsucheDE() {
     "&body=Guten%20Tag%2C%0A%0Aich%20habe%20m%C3%B6glicherweise%20eine%20passende%20Fl%C3%A4che%20f%C3%BCr%20den%20K.S.V.%20Kitzb%C3%BChel.%0A%0AOrt%3A%0AGr%C3%B6%C3%9Fe%3A%0AZustand%3A%0AKontaktdaten%3A%0A%0AFreundliche%20Gr%C3%BC%C3%9Fe";
 
   return (
-    <main
+    <div
       lang="de"
       className="w-full overflow-x-hidden bg-zinc-950 text-zinc-100 selection:bg-red-600 selection:text-white"
     >
@@ -238,6 +238,6 @@ export default function RaumsucheDE() {
           </a>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

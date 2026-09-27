@@ -1,116 +1,135 @@
-import { Check, Dumbbell, ShieldAlert } from "lucide-react";
-
-export default function MitgliedschaftDE() {
+import { ArrowUpRight, Check } from "lucide-react";
+export const metadata = { title: "Dabei sein | K.S.V. Kitzbühel" };
+export default function Mitgliedschaft() {
   return (
-    <div className="flex flex-col items-center w-full bg-zinc-950 text-zinc-100 pb-24">
-      <section className="w-full pt-24 pb-16 px-4 text-center">
-        <h1 className="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter italic">
-          Mitgliedschaft <span className="text-red-600">.</span>
+    <div>
+      <section className="shell page-intro">
+        <p className="eyebrow">GEMEINSAM VON ANFANG AN</p>
+        <h1>
+          STÄRKE BEGINNT
+          <br />
+          <span className="red-word">MIT DIR.</span>
         </h1>
-
-        <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto font-light leading-relaxed">
-          Der K.S.V. Kitzbühel ist eine private Trainingsgemeinschaft für
-          ernsthaften Kraftsport. Wir suchen Menschen, die verantwortungsvoll
-          trainieren und den Verein mit uns aufbauen möchten.
+        <p className="body-copy">
+          Du möchtest Kraftsport in Kitzbühel mit aufbauen? Melde dich
+          unverbindlich. Wir freuen uns über Menschen, die trainieren,
+          mitgestalten oder unterstützen möchten.
         </p>
-      </section>
-
-      <section className="container mx-auto px-4 max-w-5xl">
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          <div className="bg-zinc-900/50 border border-zinc-800 p-8 rounded-2xl flex flex-col">
-            <ShieldAlert className="w-12 h-12 text-zinc-500 mb-6" />
-
-            <h3 className="text-2xl font-bold uppercase tracking-widest mb-2 text-zinc-300">
-              Fördermitglied
-            </h3>
-
-            <div className="flex items-baseline gap-2 mb-6">
-              <span className="text-4xl font-black text-white">Beitrag</span>
-              <span className="text-zinc-500 font-medium uppercase tracking-wider text-sm">
-                nach Absprache
-              </span>
-            </div>
-
-            <p className="text-zinc-400 mb-8 leading-relaxed flex-grow">
-              Für Menschen und Unternehmen, die den Aufbau des K.S.V. Kitzbühel
-              unterstützen möchten, ohne regelmäßig aktiv bei uns zu trainieren.
-            </p>
-
-            <ul className="space-y-4 mb-10 text-sm font-medium text-zinc-300">
-              <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
-                Unterstützung eines jungen Kraftsportvereins
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
-                Einladung zu ausgewählten Vereinsaktivitäten
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
-                Einblick in die Entwicklung des Vereins
-              </li>
-            </ul>
-
-            <a
-              href="mailto:ksvkitz@gmail.com?subject=Interesse%20an%20F%C3%B6rdermitgliedschaft"
-              className="w-full block text-center bg-zinc-800 hover:bg-zinc-700 text-white py-4 rounded-xl font-bold uppercase tracking-widest transition-colors"
-            >
-              Interesse melden
-            </a>
-          </div>
-
-          <div className="relative bg-zinc-900 p-8 rounded-2xl border border-red-900/50 flex flex-col">
-            <div className="absolute top-0 right-8 -translate-y-1/2 bg-red-600 text-white px-4 py-1 text-xs font-black uppercase tracking-widest rounded-full">
-              Training
-            </div>
-
-            <Dumbbell className="w-12 h-12 text-red-500 mb-6" />
-
-            <h3 className="text-2xl font-bold uppercase tracking-widest mb-2 text-white">
-              Aktives Mitglied
-            </h3>
-
-            <div className="flex items-baseline gap-2 mb-6">
-              <span className="text-4xl font-black text-white">
-                Auf Anfrage
-              </span>
-              <span className="text-zinc-500 font-medium uppercase tracking-wider text-sm">
-                begrenzte Plätze
-              </span>
-            </div>
-
-            <p className="text-zinc-400 mb-8 leading-relaxed flex-grow">
-              Für engagierte Kraftsportler, die verantwortungsvoll trainieren,
-              Erfahrung mitbringen und den Verein aktiv mittragen möchten.
-            </p>
-
-            <ul className="space-y-4 mb-10 text-sm font-medium text-zinc-300">
-              <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
-                Zugang zum geplanten Vereins-Trainingsbereich
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
-                Hochwertiges ATX & Force USA Equipment
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
-                Training in einer privaten Gemeinschaft
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
-                Möglichkeit, den K.S.V. Kitzbühel zu repräsentieren
-              </li>
-            </ul>
-
-            <a
-              href="mailto:ksvkitz@gmail.com?subject=Interesse%20an%20aktiver%20Mitgliedschaft"
-              className="w-full block text-center bg-red-600 hover:bg-red-500 text-white py-4 rounded-xl font-bold uppercase tracking-widest transition-colors"
-            >
-              Mitgliedschaft anfragen
-            </a>
-          </div>
+        <a
+          className="button primary"
+          href="mailto:ksvkitz@gmail.com?subject=Interesse%20am%20KSV%20Kitzb%C3%BChel"
+        >
+          Interesse anmelden <ArrowUpRight size={18} />
+        </a>
+        <div className="notice">
+          <span className="status-dot" /> Wir sind im Aufbau und suchen einen
+          Trainingsraum. Deine Anfrage ist unverbindlich und keine
+          kostenpflichtige Anmeldung.
         </div>
+      </section>
+      <section className="shell membership-grid">
+        <article className="membership-card" data-reveal>
+          <p className="eyebrow">01 / MITGESTALTEN & TRAINIEREN</p>
+          <h2>
+            AKTIV
+            <br />
+            DABEI.
+          </h2>
+          <p>
+            Für alle, die verantwortungsvoll trainieren und Teil einer starken
+            Gemeinschaft werden möchten.
+          </p>
+          <ul>
+            {[
+              "Interesse am künftigen Trainingsangebot anmelden",
+              "Ideen und Erfahrung in den Aufbau einbringen",
+              "Kraftsport und vielseitiges Training mitgestalten",
+              "Persönlich über die nächsten Schritte sprechen",
+            ].map((t) => (
+              <li key={t}>
+                <Check size={18} />
+                {t}
+              </li>
+            ))}
+          </ul>
+          <p className="membership-note">
+            Training, Starttermin und Beiträge werden erst festgelegt, wenn die
+            Voraussetzungen geklärt sind.
+          </p>
+          <a
+            className="button primary"
+            href="mailto:ksvkitz@gmail.com?subject=Interesse%20an%20aktiver%20Mitgliedschaft"
+          >
+            Unverbindlich anfragen <ArrowUpRight size={18} />
+          </a>
+        </article>
+        <article className="membership-card" data-reveal>
+          <p className="eyebrow">02 / DEN AUFBAU MÖGLICH MACHEN</p>
+          <h2>
+            STARK
+            <br />
+            UNTERSTÜTZEN.
+          </h2>
+          <p>
+            Du teilst unsere Idee und möchtest den Verein fördern, auch ohne
+            selbst regelmäßig zu trainieren?
+          </p>
+          <ul>
+            {[
+              "Einen jungen Verein in der Region unterstützen",
+              "Kontakte, Ideen oder Sachmittel einbringen",
+              "Den Aufbau eines Trainingsraums ermöglichen",
+              "Individuelle Möglichkeiten gemeinsam besprechen",
+            ].map((t) => (
+              <li key={t}>
+                <Check size={18} />
+                {t}
+              </li>
+            ))}
+          </ul>
+          <p className="membership-note">
+            Art und Umfang der Unterstützung besprechen wir persönlich. Es
+            entstehen keine Kosten durch die Anfrage.
+          </p>
+          <a
+            className="button secondary"
+            href="mailto:ksvkitz@gmail.com?subject=Interesse%20an%20F%C3%B6rdermitgliedschaft"
+          >
+            Verein unterstützen <ArrowUpRight size={18} />
+          </a>
+        </article>
+      </section>
+      <section className="shell faq">
+        <p className="eyebrow">GUT ZU WISSEN</p>
+        <h2>DEINE FRAGEN.</h2>
+        <details>
+          <summary>Kann ich bereits bei euch trainieren?</summary>
+          <p>
+            Noch nicht. Wir suchen derzeit einen geeigneten Vereinsraum. Sobald
+            die Voraussetzungen für den Trainingsbetrieb stehen, informieren wir
+            interessierte Personen über die nächsten Schritte.
+          </p>
+        </details>
+        <details>
+          <summary>Wie viel kostet die Mitgliedschaft?</summary>
+          <p>
+            Die künftigen Beiträge und Bedingungen klären wir im Zuge des
+            Aufbaus. Deine erste Kontaktaufnahme ist unverbindlich und
+            kostenlos.
+          </p>
+        </details>
+        <details>
+          <summary>Muss ich schon Erfahrung mitbringen?</summary>
+          <p>
+            Erzähl uns einfach, wo du stehst und was dich interessiert.
+            Gemeinsam besprechen wir, wie du dich einbringen kannst und welche
+            Möglichkeiten künftig entstehen.
+          </p>
+        </details>
+        <p className="email-hint">
+          Die Schaltflächen öffnen dein E-Mail-Programm. Du erreichst uns auch
+          direkt unter <a href="mailto:ksvkitz@gmail.com">ksvkitz@gmail.com</a>.
+        </p>
       </section>
     </div>
   );

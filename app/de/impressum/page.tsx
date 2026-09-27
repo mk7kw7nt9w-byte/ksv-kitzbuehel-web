@@ -55,6 +55,10 @@ export default function Impressum() {
             Kassier / Schriftführer: Oto Okoličáni
           </p>
         </section>
+        <section>
+          <h2 className="mb-2 text-xl font-bold text-red-600">Gestaltung und KI-Visualisierungen</h2>
+          <p>Diese Website wurde mit Unterstützung künstlicher Intelligenz gestaltet und erstellt. Die entsprechend gekennzeichneten Bilder wurden mithilfe von KI generiert. Sie veranschaulichen unsere Vision und zeigen keine bestehenden Vereinsräume, tatsächlichen Mitglieder oder bereits verfügbaren Trainingsangebote.</p>
+        </section>
       </div>
     </div>
   );
